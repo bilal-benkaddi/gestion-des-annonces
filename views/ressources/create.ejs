@@ -1,0 +1,38 @@
+<!-- add_resource.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Resource</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Add Resource</h2>
+        <form action="/ressource/add" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <input type="text" class="form-control" id="type" name="type" required>
+            </div>
+            <div class="form-group">
+                <label for="est_principale">Is Principal:</label>
+                <input type="checkbox" id="est_principale" name="est_principale" value="1">
+            </div>
+            <div class="form-group">
+                <label for="code_ref">Reference Code:</label>
+                <input type="text" class="form-control" id="code_ref" name="code_ref">
+            </div>
+            <div class="form-group">
+                <label for="url_image">Upload Image:</label>
+                <input type="file" class="form-control-file" id="url_image" name="url_image">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

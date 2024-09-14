@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <% annances.forEach((annance, index)=> { %>
+      <div class="card mb-4 shadow-sm">
+
+        <% annance.ressources.forEach(ressource=> { %>
+          <% if (ressource.est_principale===1) { %>
+            <a class="nav-link" href="/annance/<%= index + 1 %>">
+              <img src="/uploads/<%= ressource.url %>" class="card-img-top" alt="<%= ressource.url %>" />
+            </a>
+            <% } %>
+              <% }); %>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%= annance.titre %>
+                  </h5>
+                  <p class="card-text">
+                    <%= annance.description %>
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="/annance/<%= annance.code %>/ressources"
+                        class="btn btn-sm btn-outline-secondary">View</a>
+                      <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    </div>
+                    <small class="text-muted">
+                      <%= annance.prix %> €
+                    </small>
+                  </div>
+                </div>
+      </div>
+      <% }); %>
+  </div>
+
+  <nav aria-label="Navigation de page">
+    <ul class="pagination justify-content-center">
+      <% if(currentPage==1) { %>
+        <li class="page-item active">
+          <a class="page-link" href="/annance?page=<%= currentPage %>">
+            <%= currentPage %>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="/annance?page=<%= currentPage + 1 %>">
+            <%= currentPage + 1 %>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="/annance?page=<%= currentPage + 1 %>">></a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="/annance?page=<%= totalPages %>">Dernière</a>
+        </li>
+        <% } else if(currentPage==totalPages) { %>
+          <li class="page-item">
+            <a class="page-link" href="/annance?page=1">Première</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/annance?page=<%= currentPage - 1 %>">
+              < </a>
+          </li>
+
+          <li class="page-item active">
+            <a class="page-link" href="/annance?page=<%= currentPage %>">
+              <%= currentPage %>
+            </a>
+          </li>
+          <% } else { %>
+            <li class="page-item">
+              <a class="page-link" href="/annance?page=1">Première</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="/annance?page=<%= currentPage - 1 %>">
+                < </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="/annance?page=<%= currentPage - 1 %>">
+                <%= currentPage - 1 %>
+              </a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="/annance?page=<%= currentPage %>">
+                <%= currentPage %>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="/annance?page=<%= currentPage + 1 %>">
+                <%= currentPage + 1 %>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="/annance?page=<%= currentPage + 1 %>">></a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="/annance?page=<%= totalPages %>">Dernière</a>
+            </li>
+            <% } %>
+    </ul>
+  </nav>
+</body>
+
+</html>

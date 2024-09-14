@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edite Annance</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Edite Annance <%= annance.titre %>
+        </h1>
+        <form action="/annance/<%= annance.code %>/update" method="post">
+            <div class="form-group">
+                <label for="code">Code:</label>
+                <input type="number" value="<%= annance.code %>" disabled class="form-control" id="code" name="code" required>
+            </div>
+            <div class="form-group">
+                <label for="titre">Titre:</label>
+                <input type="text" class="form-control" value="<%= annance.titre %>" id="titre" name="titre" required>
+            </div>
+            <div class="form-group">
+                <label for="dateDepot">Date Depot:</label>
+                <input type="date" class="form-control" id="dateDepot" name="dateDepot" value="<%= dateDepot %>" required>
+            </div>
+            <div class=" form-group">
+                <label for="descr">Description:</label>
+                <textarea class="form-control" placeholder="<%= annance.descr %>"  id="descr" name="descr" rows="3" required><%= annance.descr %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="prix">Prix:</label>
+                <input type="number" class="form-control" value="<%= annance.prix %>" id=" prix" name="prix" step="0.01"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
