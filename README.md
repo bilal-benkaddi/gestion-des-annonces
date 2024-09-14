@@ -17,28 +17,6 @@ L'application de gestion des annonces permet une gestion efficace des ressources
 - **Téléchargement de Fichiers :** Prise en charge du téléchargement et de la gestion de fichiers associés aux annonces.
 - **Interface Utilisateur :** Interface conviviale pour une gestion facile des annonces et des ressources.
 
-## Pages Principales
-
-1. **Page d'Ajout des Ressources**
-   - Permet l'ajout de nouvelles ressources via un formulaire.
-   - Inclut des champs pour le téléchargement de fichiers, la spécification du type de ressource, et d'autres détails comme le code de référence.
-
-2. **Page de Liste des Ressources**
-   - Affiche toutes les ressources existantes.
-   - Offre des options de filtrage et de tri pour une navigation facile.
-
-3. **Page de Détail d'une Ressource**
-   - Affiche les détails d'une ressource spécifique.
-   - Permet de consulter les informations et d'effectuer des modifications ou suppressions.
-
-4. **Page de Mise à Jour des Ressources**
-   - Permet de mettre à jour les informations d'une ressource.
-   - Inclut un formulaire pré-rempli avec les détails actuels de la ressource.
-
-5. **Page de Suppression des Ressources**
-   - Permet de supprimer une ressource.
-   - Inclut une confirmation avant la suppression et supprime également le fichier associé.
-
 ## Installation
 
 1. **Clonez le dépôt :**
